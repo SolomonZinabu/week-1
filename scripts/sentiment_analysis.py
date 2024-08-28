@@ -1,9 +1,11 @@
-from textblob import TextBlob
 import pandas as pd
 
-def analyze_sentiment(headline):
-    return TextBlob(headline).sentiment.polarity
+from transformers import pipeline
 
-def sentiment_analysis(df):
-    df['Sentiment'] = df['headline'].apply(analyze_sentiment)
-    return df
+def perform_sentiment_analysis(headlines):
+    sentiment_analyzer = pipeline("sentiment-analysis")
+    sentiments = sentiment_analyzer(headlines.tolist())
+    return pd.DataFrame(sentiments)
+
+# Example Usage:
+# sentiments = perform_sentiment_analysis(analyst_data['headline'])
