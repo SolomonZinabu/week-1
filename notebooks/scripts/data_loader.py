@@ -1,6 +1,6 @@
 import pandas as pd
 
-def load_analyst_data(file_path='Data/raw_analyst_ratings.csv'):
+def load_analyst_data(file_path='../Data/raw_analyst_ratings/raw_analyst_ratings.csv'):
     return pd.read_csv(file_path)
 
 def load_stock_data(stock_file_path):
