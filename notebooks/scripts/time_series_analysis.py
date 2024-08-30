@@ -7,3 +7,4 @@ def analyze_publication_frequency(data):
 
 # Example Usage:
 # publication_freq = analyze_publication_frequency(analyst_data)
+
