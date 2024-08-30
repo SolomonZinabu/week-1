@@ -1,7 +1,8 @@
 pandas
 scikit-learn
 numpy
-transformers
 nltk
 scipy
-0911229682
+ta-lib
+pynance
+matplotlib
