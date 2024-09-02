@@ -18,3 +18,12 @@ def perform_sentiment_analysis(headlines):
             'negative': sentiment_score['neg']
         })
     return pd.DataFrame(sentiments)
+def perform_sentiment_analysis2(headlines):
+    sia = SentimentIntensityAnalyzer()
+    sentiments = headlines.apply(lambda x: sia.polarity_scores(x)['compound'])
+    return sentiments
+
+def aggregate_daily_sentiment(news_data):
+    # Aggregate sentiment by date
+    daily_sentiment = news_data.groupby('date')['sentiment'].mean().reset_index()
+    return daily_sentiment
